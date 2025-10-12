@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""成績入力システム メインエントリーポイント"""
+"""スキャン分割・成績入力システム メインエントリーポイント"""
 
 import sys
 import logging
@@ -30,12 +30,12 @@ from views.main_window import MainWindow
 def main():
     """アプリケーションメイン関数"""
     logger.info("=" * 60)
-    logger.info("成績入力システム起動")
+    logger.info("スキャン分割・成績入力システム起動")
     logger.info("=" * 60)
     
     try:
         app = QApplication(sys.argv)
-        app.setApplicationName("成績入力システム")
+        app.setApplicationName("スキャン分割・成績入力システム")
         app.setOrganizationName("GradeEntrySystem")
         
         # メインウィンドウ作成

@@ -1,8 +1,8 @@
 """アプリケーション設定"""
 
 # アプリケーション情報
-APP_NAME = "成績入力システム"
-APP_VERSION = "1.0.0"
+APP_NAME = "スキャン分割・成績入力システム"
+APP_VERSION = ""
 ORGANIZATION = "GradeEntrySystem"
 
 # データベース設定
