@@ -1,28 +1,50 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_all
 
-datas = []
-binaries = []
-hiddenimports = []
-
-tmp_ret = collect_all('PySide6')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+block_cipher = None
 
 a = Analysis(
     ['main.py'],
-    pathex=['.'],
-    binaries=binaries,
+    pathex=[],
+    binaries=[],
     datas=[
         ('config', 'config'),
-        ('database', 'database'),
-        ('models', 'models'),
-        ('views', 'views'),
-        ('utils', 'utils'),
-    ] + datas,
-    hiddenimports=hiddenimports + [
+        ('database/migrations', 'database/migrations'),
+    ],
+    hiddenimports=[
         'PySide6.QtCore',
         'PySide6.QtGui',
         'PySide6.QtWidgets',
+        'encodings.utf_8',
+        'encodings.utf_8_sig',
+        'encodings.cp932',
+        'encodings.shift_jis',
+        'database',
+        'database.db_manager',
+        'database.repositories',
+        'database.repositories.course_repository',
+        'database.repositories.student_repository',
+        'database.repositories.grade_repository',
+        'models',
+        'models.course',
+        'models.student',
+        'models.grade',
+        'models.split',
+        'views',
+        'views.main_window',
+        'views.grade_entry_view',
+        'views.course_management_view',
+        'views.student_management_view',
+        'views.grade_list_view',
+        'views.pdf_split_view',
+        'views.widgets',
+        'views.widgets.image_preview_widget',
+        'views.widgets.student_grade_card',
+        'views.widgets.split_settings_dialog',
+        'views.widgets.student_assignment_item',
+        'utils',
+        'utils.csv_handler',
+        'utils.radio_button_helper',
+        'utils.pdf_splitter',
     ],
     hookspath=[],
     hooksconfig={},
@@ -30,37 +52,30 @@ a = Analysis(
     excludes=[],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
-    cipher=None,
+    cipher=block_cipher,
     noarchive=False,
 )
 
-pyz = PYZ(a.pure, a.zipped_data, cipher=None)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
     pyz,
     a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
     [],
-    exclude_binaries=True,
     name='GradeEntrySystem',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
     console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-)
-
-coll = COLLECT(
-    exe,
-    a.binaries,
-    a.zipfiles,
-    a.datas,
-    strip=False,
-    upx=True,
-    upx_exclude=[],
-    name='GradeEntrySystem',
 )
