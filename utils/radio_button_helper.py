@@ -1,6 +1,6 @@
 import time
 from typing import Dict, Optional
-from PyQt6.QtWidgets import QRadioButton, QButtonGroup
+from PySide6.QtWidgets import QRadioButton, QButtonGroup
 import logging
 
 logger = logging.getLogger(__name__)

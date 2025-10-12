@@ -1,9 +1,9 @@
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel,
     QRadioButton, QButtonGroup, QLineEdit, QPushButton,
     QFrame, QMessageBox
 )
-from PyQt6.QtCore import pyqtSignal, Qt
+from PySide6.QtCore import Signal, Qt
 import logging
 
 from models.student import Student
@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 class StudentGradeCard(QWidget):
     """生徒成績入力カードウィジェット"""
     
-    grade_saved = pyqtSignal(str)
+    grade_saved = Signal(str)
     
     def __init__(self, student: Student, existing_grade: Grade = None, parent=None):
         super().__init__(parent)

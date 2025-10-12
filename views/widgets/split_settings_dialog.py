@@ -1,11 +1,11 @@
 """PDF分割設定ダイアログ"""
 
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QLabel,
     QSpinBox, QLineEdit, QComboBox, QDialogButtonBox,
     QMessageBox, QGroupBox
 )
-from PyQt6.QtCore import Qt
+from PySide6.QtCore import Qt
 import logging
 
 from models.split import SplitSettings

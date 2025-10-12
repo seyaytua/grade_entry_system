@@ -1,10 +1,10 @@
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
     QTableWidget, QTableWidgetItem, QHeaderView,
     QMessageBox, QDialog, QLabel, QLineEdit,
     QDialogButtonBox, QFileDialog, QComboBox
 )
-from PyQt6.QtCore import Qt
+from PySide6.QtCore import Qt
 import logging
 
 from database.repositories.course_repository import CourseRepository

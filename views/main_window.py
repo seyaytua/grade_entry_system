@@ -1,10 +1,10 @@
 import sys
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QTabWidget, QMessageBox, QMenuBar, QMenu
 )
-from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QAction
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QAction
 import logging
 
 from config.settings import (

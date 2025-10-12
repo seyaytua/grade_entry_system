@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsPixmapItem
-from PyQt6.QtCore import Qt, QPointF
-from PyQt6.QtGui import QPixmap, QImage, QPainter
+from PySide6.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsPixmapItem
+from PySide6.QtCore import Qt, QPointF
+from PySide6.QtGui import QPixmap, QImage, QPainter
 from PIL import Image
 import logging
 from pathlib import Path

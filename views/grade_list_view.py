@@ -1,11 +1,11 @@
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
     QTableWidget, QTableWidgetItem, QHeaderView,
     QMessageBox, QFileDialog, QComboBox, QDateEdit,
     QLabel, QLineEdit, QGroupBox, QDialog, QDialogButtonBox,
     QTextEdit, QCheckBox
 )
-from PyQt6.QtCore import Qt, QDate
+from PySide6.QtCore import Qt, QDate
 import logging
 from pathlib import Path
 

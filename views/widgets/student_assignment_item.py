@@ -1,10 +1,10 @@
 """生徒のページ割り当てアイテムウィジェット"""
 
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel,
     QSpinBox, QCheckBox
 )
-from PyQt6.QtCore import Qt, pyqtSignal
+from PySide6.QtCore import Qt, Signal
 import logging
 
 from models.split import StudentPageAssignment
@@ -16,9 +16,9 @@ class StudentAssignmentItem(QWidget):
     """生徒のページ割り当てアイテム"""
     
     # シグナル
-    absent_changed = pyqtSignal(bool)  # 欠席状態変更
-    pages_changed = pyqtSignal(int, int)  # ページ範囲変更
-    clicked = pyqtSignal()  # クリックされた
+    absent_changed = Signal(bool)  # 欠席状態変更
+    pages_changed = Signal(int, int)  # ページ範囲変更
+    clicked = Signal()  # クリックされた
     
     def __init__(self, assignment: StudentPageAssignment, parent=None):
         super().__init__(parent)

@@ -21,8 +21,8 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-from PyQt6.QtWidgets import QApplication
-from PyQt6.QtGui import QIcon
+from PySide6.QtWidgets import QApplication
+from PySide6.QtGui import QIcon
 
 from views.main_window import MainWindow
 

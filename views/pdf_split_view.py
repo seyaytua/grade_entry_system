@@ -1,11 +1,11 @@
 """PDF分割作業ビュー"""
 
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
     QLabel, QSplitter, QListWidget, QListWidgetItem,
     QMessageBox, QFileDialog, QGroupBox
 )
-from PyQt6.QtCore import Qt, pyqtSignal
+from PySide6.QtCore import Qt, Signal
 import logging
 from pathlib import Path
 from typing import List, Dict
@@ -25,8 +25,8 @@ class PDFSplitView(QWidget):
     """PDF分割作業ビュー"""
     
     # シグナル
-    split_completed = pyqtSignal(SplitResult)  # 分割完了
-    cancelled = pyqtSignal()  # キャンセル
+    split_completed = Signal(SplitResult)  # 分割完了
+    cancelled = Signal()  # キャンセル
     
     def __init__(self, pdf_path: str, students: List[Student], 
                  grades: Dict[str, Grade], course: Course,
