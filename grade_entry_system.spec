@@ -1,6 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
+import os
 
 block_cipher = None
+
+# アイコンファイルのパス（存在チェック）
+icon_path = 'resources/icons/app_icon.ico'
+if not os.path.exists(icon_path):
+    icon_path = None
 
 a = Analysis(
     ['main.py'],
@@ -66,7 +72,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='resources/icons/app_icon.ico',
+    icon=icon_path,
 )
 
 coll = COLLECT(
