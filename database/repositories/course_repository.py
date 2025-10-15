@@ -186,7 +186,7 @@ class CourseRepository:
             
             # Step 2: CSVデータを読み込み
             csv_data = []
-            with open(csv_path, 'r', encoding='utf-8') as f:
+            with open(csv_path, 'r', encoding='utf-8-sig') as f:
                 reader = csv.DictReader(f)
                 
                 for row_num, row in enumerate(reader, start=2):
@@ -264,7 +264,7 @@ class CourseRepository:
             
             Path(csv_path).parent.mkdir(parents=True, exist_ok=True)
             
-            with open(csv_path, 'w', encoding='utf-8', newline='') as f:
+            with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
                 fieldnames = ['course_name', 'note1', 'note2', 'note3']
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
                 

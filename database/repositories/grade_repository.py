@@ -227,7 +227,7 @@ class GradeRepository:
             
             Path(csv_path).parent.mkdir(parents=True, exist_ok=True)
             
-            with open(csv_path, 'w', encoding='utf-8', newline='') as f:
+            with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
                 fieldnames = [
                     'course_name', 'entry_date', 'student_number', 'student_name',
                     'class_number', 'grade1', 'grade2', 'grade3', 'grade4',
@@ -295,7 +295,7 @@ class GradeRepository:
             
             # Step 2: CSVデータを読み込み（先に読み込んでバリデーション）
             csv_data = []
-            with open(csv_path, 'r', encoding='utf-8') as f:
+            with open(csv_path, 'r', encoding='utf-8-sig') as f:
                 reader = csv.DictReader(f)
                 
                 for row_num, row in enumerate(reader, start=2):
@@ -479,7 +479,7 @@ class GradeRepository:
         result = {'created': 0, 'updated': 0, 'errors': []}
         
         try:
-            with open(csv_path, 'r', encoding='utf-8') as f:
+            with open(csv_path, 'r', encoding='utf-8-sig') as f:
                 reader = csv.DictReader(f)
                 
                 for row_num, row in enumerate(reader, start=2):
