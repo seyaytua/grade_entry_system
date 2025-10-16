@@ -14,7 +14,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(str(project_root / 'grade_entry_system.log'), encoding='utf-8'),
+        logging.FileHandler(project_root / 'grade_entry_system.log', encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
