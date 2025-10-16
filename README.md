@@ -56,3 +56,30 @@ python build_windows.py
 ### トラブルシューティング
 
 詳細な手順とトラブルシューティングは `WINDOWS_BUILD_GUIDE.md` を参照してください。
+
+## 🚀 GitHub Actions による自動化
+
+このプロジェクトは GitHub Actions を使用して以下の自動化を行います：
+
+### 自動実行されるワークフロー
+
+- **プルリクエスト時**: コード品質チェック & Windows ビルドテスト
+- **main ブランチプッシュ時**: Windows 配布ファイル自動作成
+- **タグプッシュ時**: 自動リリース作成
+- **毎週月曜日**: 定期メンテナンス & 依存関係チェック
+
+### 手動実行可能なアクション
+
+#### リリース作成
+```bash
+# GitHubのActionsタブから「手動リリース作成」を実行
+# または、タグをプッシュして自動リリース
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+#### 設定されたワークフロー
+- `build-and-release.yml` - メインの自動ビルド & リリース
+- `pr-test.yml` - プルリクエスト時のテスト
+- `scheduled-maintenance.yml` - 定期メンテナンス
+- `manual-release.yml` - 手動リリース作成
